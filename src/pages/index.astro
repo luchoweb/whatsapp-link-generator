@@ -38,11 +38,11 @@ import CountrySelect from '../components/CountrySelect.astro';
 						Your Link:
 					</h3>
 					
-					<p class="generator__link">
-						<span id="link-generated">https://wa.me/573246802829?text=Hi%20there</span>
+					<div class="generator__link">
+						<input id="link-generated" readonly />
 
 						<button id="copy-link" class="button-copy">Copy link</button>
-					</p>
+					</div>
 
 					<div class="generator__button-group">
 						<p>
@@ -51,7 +51,8 @@ import CountrySelect from '../components/CountrySelect.astro';
 						</p>
 						<div class="generator__button">
 							<div class="form__group">
-								<p class="generator__btn-code" id="button-code"></p>
+								<input class="generator__btn-code" id="button-code" readonly />
+
 								<button id="copy-code" class="button-copy">Copy HTML</button>
 							</div>
 						</div>
@@ -93,8 +94,8 @@ import CountrySelect from '../components/CountrySelect.astro';
 
 		const buttonCode = `<a aria-label="Chat on WhatsApp" href="${waLink}" target="_blank" rel="noopener"><img alt="Chat on WhatsApp" src="https://i.ibb.co/2s6rLtB/Whats-App-Button-Green-Small.png" width="222" height="50" /></a>`;
 
-		linkGeneratedBox.textContent = waLink;
-		buttonCodeBox.textContent = buttonCode;
+		linkGeneratedBox.value = waLink;
+		buttonCodeBox.value = buttonCode;
 		previewBtnBox.innerHTML = buttonCode;
 
 		linkHidden.value = waLink;
@@ -319,6 +320,12 @@ import CountrySelect from '../components/CountrySelect.astro';
 		margin: 0;
 		padding: 1rem;
 		word-break: break-all;
+	}
+
+	.generator__link input {
+		background-color: var(--color-primary);
+		color: #fff;
+		width: 100%;
 	}
 
 	.button-copy {
