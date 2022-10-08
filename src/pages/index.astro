@@ -255,13 +255,18 @@ import CountrySelect from '../components/CountrySelect.astro';
 		width: 100%;
 	}
 
+	.form__errors p {
+		opacity: 0;
+		margin: 0;
+		padding: 1rem;
+	}
+
 	.form__errors.show {
 		max-height: 100px;
 	}
 
-	.form__errors p {
-		margin: 0;
-		padding: 1rem;
+	.form__errors.show p {
+		opacity: 1;
 	}
 
 	.form__button {
