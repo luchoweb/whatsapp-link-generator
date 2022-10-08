@@ -189,7 +189,7 @@ import CountrySelect from '../components/CountrySelect.astro';
 	main {
 		display: grid;
 		height: 100vh;
-		min-height: 900px;
+		min-height: 880px;
 		place-content: center center;
 	}
 
@@ -199,7 +199,7 @@ import CountrySelect from '../components/CountrySelect.astro';
 		box-shadow: 0 0 7px var(--color-text);
 		display: block;
 		margin: 2rem 0;
-		width: 310px;
+		width: 640px;
 	}
 
 	.generator__container {
@@ -296,6 +296,7 @@ import CountrySelect from '../components/CountrySelect.astro';
 	.generator__result.show * {
 		opacity: 1;
 		height: fit-content;
+		transition: all 200ms ease-in-out;
 	}
 	
 	.generator__result-title {
@@ -371,12 +372,24 @@ import CountrySelect from '../components/CountrySelect.astro';
 	.generator__copy {
 		color: #fff;
 		font-size: .9rem;
+		padding-bottom: 1rem;
 		text-align: center;
 	}
 
-	@media (min-width: 768px) {
+	@media (max-width: 767px) {
+		main {
+			place-content: flex-start center;
+			min-height: 100vh;
+		}
+
 		.generator {
-			width: 640px;
+			height: fit-content;
+			margin: 1rem auto;
+			width: 94%;
+		}
+
+		.generator__form .form__group {
+			grid-template-columns: 40% 60%;
 		}
 	}
 </style>
