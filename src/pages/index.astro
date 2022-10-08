@@ -62,15 +62,26 @@ import CountrySelect from '../components/CountrySelect.astro';
 			</div>
 		</div>
 	</main>
+
+	<input type="text" id="link-hidden" class="input-hidden">
+	<input type="text" id="code-hidden" class="input-hidden">
 </Layout>
 
 <script is:global>
-	function generateLink( resultBox ) {
+	function copyToClipboard(input) {
+		input.select();
+		input.setSelectionRange(0, 99999);
+		navigator.clipboard.writeText(input.value);
+	}
+
+	function generateLink() {
 		const buttonCodeBox = document.querySelector('#button-code');
 		const linkGeneratedBox = document.querySelector('#link-generated');
 		const previewBtnBox = document.querySelector('#preview-button');
 		const copyLinkBtn = document.querySelector('#copy-link');
 		const copyCodeBtn = document.querySelector('#copy-code');
+		const linkHidden = document.querySelector('#link-hidden');
+		const codeHidden = document.querySelector('#code-hidden');
 
 		const message = messageTextarea.value !== '' 
 			? `?text=${encodeURI(messageTextarea.value)}`
@@ -83,6 +94,17 @@ import CountrySelect from '../components/CountrySelect.astro';
 		linkGeneratedBox.textContent = waLink;
 		buttonCodeBox.textContent = buttonCode;
 		previewBtnBox.innerHTML = buttonCode;
+
+		linkHidden.value = waLink;
+		codeHidden.value = buttonCode;
+
+		copyLinkBtn.addEventListener('click', function(){
+			copyToClipboard(linkHidden);
+		});
+	
+		copyCodeBtn.addEventListener('click', function(){
+			copyToClipboard(codeHidden);
+		});
 
 		resultBox.classList.add('show');
 	}
@@ -125,8 +147,13 @@ import CountrySelect from '../components/CountrySelect.astro';
 	});
 
 	generateButton.addEventListener('click', function(){
-		const isInputEmpty = countryCodeSelect.value === '' || whatsappNumberInput.value === '';
-		const hasErrors = errors.countryCode || errors.phoneNumber;
+		const isInputEmpty = 
+			countryCodeSelect.value === '' 
+			|| whatsappNumberInput.value === '';
+		
+			const hasErrors = 
+				errors.countryCode 
+				|| errors.phoneNumber;
 
 		if ( isInputEmpty || hasErrors ) {
 			resultBox.classList.remove('show');
@@ -135,7 +162,7 @@ import CountrySelect from '../components/CountrySelect.astro';
 		}
 
 		errorsBox.classList.remove('show')
-		generateLink(resultBox);
+		generateLink();
 	});
 
 </script>
@@ -151,6 +178,10 @@ import CountrySelect from '../components/CountrySelect.astro';
 
 	input:focus, button:focus, textarea:focus {
 		outline: none;
+	}
+
+	.input-hidden {
+		display: none;
 	}
 
 	main {
