@@ -51,7 +51,7 @@ import CountrySelect from '../components/CountrySelect.astro';
 						</p>
 						<div class="generator__button">
 							<div class="form__group">
-								<input class="generator__btn-code" id="button-code" readonly />
+								<textarea class="generator__btn-code" id="button-code" readonly></textarea>
 
 								<button id="copy-code" class="button-copy">Copy HTML</button>
 							</div>
@@ -190,7 +190,6 @@ import CountrySelect from '../components/CountrySelect.astro';
 	main {
 		display: grid;
 		height: 100vh;
-		min-height: 880px;
 		place-content: center center;
 	}
 
@@ -325,6 +324,8 @@ import CountrySelect from '../components/CountrySelect.astro';
 	.generator__link input {
 		background-color: var(--color-primary);
 		color: #fff;
+		height: fit-content;
+		resize: none;
 		width: 100%;
 	}
 
@@ -377,6 +378,8 @@ import CountrySelect from '../components/CountrySelect.astro';
 		display: block;
 		margin: 0 0 1rem 0;
 		padding: 1rem 15% 1rem 2%;
+		resize: none;
+		height: 100px !important;
 		text-align: left;
 		width: 83%;
 	}
@@ -391,17 +394,15 @@ import CountrySelect from '../components/CountrySelect.astro';
 	@media (max-width: 767px) {
 		main {
 			place-content: flex-start center;
-			min-height: 100vh;
 		}
 
 		.generator {
-			height: fit-content;
 			margin: 1rem auto;
 			width: 94%;
 		}
 
 		.generator__form .form__group {
-			grid-template-columns: 40% 60%;
+			grid-template-columns: 50% 50%;
 		}
 	}
 </style>
