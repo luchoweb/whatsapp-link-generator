@@ -87,10 +87,10 @@ import CountrySelect from '../components/CountrySelect.astro';
 		const codeHidden = document.querySelector('#code-hidden');
 
 		const message = messageTextarea.value !== '' 
-			? `?text=${encodeURI(messageTextarea.value)}`
+			? encodeURI(messageTextarea.value)
 			: '';
 
-		const waLink = `https://wa.me/${countryCodeSelect.value}${whatsappNumberInput.value}${message}`;
+		const waLink = `https://wa.me/${countryCodeSelect.value}${whatsappNumberInput.value}?text=${message}`;
 
 		const buttonCode = `<a aria-label="Chat on WhatsApp" href="${waLink}" target="_blank" rel="noopener"><img alt="Chat on WhatsApp" src="https://i.ibb.co/2s6rLtB/Whats-App-Button-Green-Small.png" width="222" height="50" /></a>`;
 
