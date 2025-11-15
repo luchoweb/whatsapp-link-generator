@@ -63,7 +63,7 @@ import CountrySelect from '../components/CountrySelect.astro';
 			</div>
 		</div>
 
-		<p class="generator__copy">2022 &bull; by Lucho Web</p>
+		<p class="generator__copy">2022 &bull; by <a href="https://luchoweb.dev" target="_blank" rel="noopener">Lucho Web</a></p>
 	</main>
 
 	<input type="text" id="link-hidden" class="input-hidden">
@@ -176,21 +176,21 @@ import CountrySelect from '../components/CountrySelect.astro';
 		border: none;
 		border-radius: .5rem;
 		font-family: var(--font);
-		font-size: 1rem;
+		font-size: 1rem
 	}
 
 	input:focus, button:focus, textarea:focus {
-		outline: none;
+		outline: none
 	}
 
 	.input-hidden {
-		display: none;
+		display: none
 	}
 
 	main {
 		display: grid;
 		min-height: 100vh;
-		place-content: center center;
+		place-content: center center
 	}
 
 	.generator {
@@ -199,51 +199,51 @@ import CountrySelect from '../components/CountrySelect.astro';
 		box-shadow: 0 0 7px var(--color-text);
 		display: block;
 		margin: 2rem 0;
-		width: 640px;
+		width: 640px
 	}
 
 	.generator__container {
-		padding: 2rem;
+		padding: 2rem
 	}
 
 	.generator__title {
 		font-size: 1.5rem;
-		margin-top: 0;
+		margin-top: 0
 	}
 
 	.generator__instructions {
-		margin: 1rem 0;
+		margin: 1rem 0
 	}
 
 	.generator__form {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 1.5rem 0 0;
+		margin: 1.5rem 0 0
 	}
 
 	.generator__form .form__group {
 		display: grid;
 		gap: 1rem;
 		grid-template-columns: 1fr 1fr;
-		flex: 0 0 100%;
+		flex: 0 0 100%
 	}
 
 	.form__input {
 		appearance: none;
 		border: 1px solid var(--color-text);
-		padding: .4rem;
+		padding: .4rem
 	}
 
 	.form__textarea {
 		border: 1px solid var(--color-text);
 		flex: 0 0 94%;
 		padding: 1rem;
-		margin: 1rem 0;
+		margin: 1rem 0
 	}
 
 	.form__input:focus,
 	.form__textarea:focus {
-		border: 1px solid var(--color-light);
+		border: 1px solid var(--color-light)
 	}
 
 	.form__errors {
@@ -252,21 +252,21 @@ import CountrySelect from '../components/CountrySelect.astro';
 		color: #fff;
 		max-height: 0;
 		transition: all 200ms ease-in-out;
-		width: 100%;
+		width: 100%
 	}
 
 	.form__errors p {
 		opacity: 0;
 		margin: 0;
-		padding: 1rem;
+		padding: 1rem
 	}
 
 	.form__errors.show {
-		max-height: 100px;
+		max-height: 100px
 	}
 
 	.form__errors.show p {
-		opacity: 1;
+		opacity: 1
 	}
 
 	.form__button {
@@ -274,38 +274,38 @@ import CountrySelect from '../components/CountrySelect.astro';
 		color: #fff;
 		cursor: pointer;
 		padding: .7rem 1rem;
-		transition: all 200ms ease-in-out;
+		transition: all 200ms ease-in-out
 	}
 
 	.form__button:hover {
-		background-color: var(--color-primary);
+		background-color: var(--color-primary)
 	}
 
 	.generator__result {
 		margin: 0;
-		max-height: 0;
+		max-height: 0
 	}
 
 	.generator__result * {
 		opacity: 0;
 		height: 0;
-		margin: 0;
+		margin: 0
 	}
 
 	.generator__result.show {
 		margin-top: 2rem;
 		transition: all 200ms ease-in-out;
-		max-height: 500px;
+		max-height: 500px
 	}
 
 	.generator__result.show * {
 		opacity: 1;
 		height: fit-content;
-		transition: all 200ms ease-in-out;
+		transition: all 200ms ease-in-out
 	}
 	
 	.generator__result-title {
-		margin-bottom: .5rem;
+		margin-bottom: .5rem
 	}
 
 	.generator__link {
@@ -318,7 +318,11 @@ import CountrySelect from '../components/CountrySelect.astro';
 		justify-content: space-between;
 		margin: 0;
 		padding: 1rem;
-		word-break: break-all;
+		word-break: break-all
+	}
+	.generator__link a {
+		color: #fff;
+		text-decoration: none
 	}
 
 	.generator__link input {
@@ -326,7 +330,7 @@ import CountrySelect from '../components/CountrySelect.astro';
 		color: #fff;
 		height: fit-content;
 		resize: none;
-		width: 100%;
+		width: 100%
 	}
 
 	.button-copy {
@@ -338,37 +342,37 @@ import CountrySelect from '../components/CountrySelect.astro';
 		flex: 0 0 90px;
 		padding: .3rem .5rem;
 		transition: all 200ms ease-in-out;
-		width: fit-content;
+		width: fit-content
 	}
 
 	.button-copy:hover {
 		background-color: var(--color-primary);
 		border: 1px solid #fff;
-		color: #fff;
+		color: #fff
 	}
 
 	.generator__button-group {
-		margin-top: 2rem;
+		margin-top: 2rem
 	}
 
 	.generator__button-group p {
-		margin: 0 0 1rem 0;
+		margin: 0 0 1rem 0
 	}
 
 	.generator__button {
 		border: 2px;
-		color: var(--color-text);
+		color: var(--color-text)
 	}
 
 	.generator__button .form__group {
-		position: relative;
+		position: relative
 	}
 
 	.generator__button .form__group .button-copy {
 		position: absolute;
 		right: 1rem;
 		top: 50%;
-		transform: translateY(-50%);
+		transform: translateY(-50%)
 	}
 
 	.generator__btn-code {
@@ -381,28 +385,28 @@ import CountrySelect from '../components/CountrySelect.astro';
 		resize: none;
 		height: 100px !important;
 		text-align: left;
-		width: 96%;
+		width: 96%
 	}
 
 	.generator__copy {
 		color: #fff;
 		font-size: .9rem;
 		padding-bottom: 1rem;
-		text-align: center;
+		text-align: center
 	}
 
 	@media (max-width: 767px) {
 		main {
-			place-content: flex-start center;
+			place-content: flex-start center
 		}
 
 		.generator {
 			margin: 1rem auto;
-			width: 94%;
+			width: 94%
 		}
 
 		.generator__form .form__group {
-			grid-template-columns: 50% 50%;
+			grid-template-columns: 50% 50%
 		}
 	}
 </style>
